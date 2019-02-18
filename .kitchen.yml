@@ -23,4 +23,10 @@ suites:
       inspec_tests:
         - test/integration/default
     attributes:
-      
+  - name: install_virtualenv
+    run_list:
+      - recipe[django::install_virtualenv]
+    verifier:
+      inspec_tests:
+        - test/integration/default/install_virtualenv_test.rb
+    attributes:
