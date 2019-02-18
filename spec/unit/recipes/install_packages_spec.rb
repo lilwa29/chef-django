@@ -1,12 +1,12 @@
 #
 # Cookbook:: django
-# Spec:: default
+# Spec:: install_packages
 #
 # Copyright:: 2019, The Authors, All Rights Reserved.
 
 require 'spec_helper'
 
-describe 'django::default' do
+describe 'django::install_packages' do
   context 'When all attributes are default, on Ubuntu 14.04' do
     let(:chef_run) do
       # for a complete list of available platforms and versions see:
@@ -19,5 +19,4 @@ describe 'django::default' do
       expect { chef_run }.to_not raise_error
     end
   end
-
 end
