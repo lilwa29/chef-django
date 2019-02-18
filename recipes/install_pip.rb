@@ -8,4 +8,6 @@ execute 'apt-get update'
 
 package 'python3-pip'
 
-execute 'pip3 install django==1.7.5'
+pip 'django' do
+  action :install
+end

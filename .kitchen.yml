@@ -36,3 +36,10 @@ suites:
       inspec_tests:
         - test/integration/default/install_virtualenv_test.rb
     attributes:
+  - name: install_git
+    run_list:
+      - recipe[django::install_git]
+    verifier:
+      inspec_tests:
+        - test/integration/default/install_git_test.rb
+    attributes:
