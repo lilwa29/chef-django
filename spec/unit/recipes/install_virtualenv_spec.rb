@@ -26,5 +26,22 @@ describe 'django::install_virtualenv' do
     it 'installs virtualenv' do
       expect(chef_run).to run_execute('pip3 install virtualenv')
     end
+
+    it 'creates newproject directory'do
+      expect(chef_run).to create_directory('/newproject')
+    end
+
+    it 'creates newenv' do
+      expect(chef_run).to run_execute('virtualenv /newproject/newenv')
+    end
+
+    it 'activate for isolated environment' do
+      expect(chef_run).to run_execute('source /newproject/newenv/bin/activate')
+    end
+
+    it 'installs django on newenv' do
+      expect(chef_run).to run_execute('cd newproject | pip3 install django')
+    end
+
   end
 end
