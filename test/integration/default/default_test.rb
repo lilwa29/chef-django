@@ -8,6 +8,5 @@
 
 # This is an example test, replace it with your own test.
 describe command ('django-admin --version') do
-  it { should exist }
   its(:stdout) { should match(/1.6/) }
 end
